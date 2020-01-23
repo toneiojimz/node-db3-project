@@ -35,13 +35,13 @@ function add(scheme) {
 
 
 
-function update(id, changes) {
+function update(changes, id) {
     return db('schemes')
-        .where( id )
+        .where( {id} )
         .update(changes)
-        .then(scheme => {
-            return findById(id).first();
-        })
+        // .then(scheme => {
+        //     return findById([id]).first();
+        // })
 }
 
 function remove(id) {
